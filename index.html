@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For TAIBA SIDDIQUI 💍</title>
+
+<style>
+body{
+margin:0;
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(135deg,#0f0f0f,#1a1a2e,#16213e);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+overflow:hidden;
+}
+
+.page{
+display:none;
+padding:20px;
+max-width:600px;
+animation: fade 0.8s ease;
+}
+
+.active{
+display:block;
+}
+
+h1{
+font-size:30px;
+margin-bottom:20px;
+}
+
+.glow{
+font-size:36px;
+font-weight:bold;
+background: linear-gradient(90deg,#ff4ecd,#ff9a00,#ffe600);
+-webkit-background-clip:text;
+color:transparent;
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px #ff4ecd;}
+to{ text-shadow:0 0 25px #ffe600;}
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
+}
+
+.next{
+background:#ff4ecd;
+color:white;
+}
+
+.yes{
+background:#00c853;
+color:white;
+}
+
+.no{
+background:#d50000;
+color:white;
+position:absolute;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.countdown{
+margin-top:20px;
+font-size:18px;
+color:#ffd700;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page active" id="page1">
+<h1>
+Taiba I’ll always love you no matter what happens 💕<br>
+Please be mine forever, never leave me 🥺 ilysm<br><br>
+Chunni 💖 Baebbbyyy 💕 Wifeyyyy 💍 Bacccha 🧸 Bubbuuu 💗
+</h1>
+<button class="next" onclick="nextPage(2)">NEXT ➜</button>
+</div>
+
+<div class="page" id="page2">
+<h1>
+Will you be my forever and my Valentine for rest of the life<br>
+in this world and akhirat? 🤍✨
+</h1>
+<button class="next" onclick="nextPage(3)">NEXT ➜</button>
+</div>
+
+<div class="page" id="page3">
+<h1>
+Will you be with me for rest of the life? 💍<br>
+Marry me please! I’ll be the best hubbie in the world for you 🥹❤️
+</h1>
+<button class="yes" onclick="nextPage(4)">YES 💚</button>
+<button class="no" id="noBtn">NO ❌</button>
+</div>
+
+<div class="page" id="page4">
+<h1>
+In Sha Allah we will make it halal nikkah 🤲✨<br>
+In Sha Allah you will fall in love with me very soon 🥺❤️<br>
+Thank you for everything, I love you forever 💖<br><br>
+
+<span class="glow">TAIBA SIDDIQUI</span>
+</h1>
+
+<div class="countdown" id="countdown"></div>
+</div>
+
+<script>
+function nextPage(page){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById('page'+page).classList.add('active');
+}
+
+const noBtn = document.getElementById("noBtn");
+noBtn.addEventListener("mouseover", ()=>{
+let x = Math.random() * (window.innerWidth - 100);
+let y = Math.random() * (window.innerHeight - 50);
+noBtn.style.left = x + "px";
+noBtn.style.top = y + "px";
+});
+
+let targetDate = new Date();
+targetDate.setFullYear(targetDate.getFullYear() + 2);
+
+function updateCountdown(){
+let now = new Date();
+let diff = targetDate - now;
+
+let days = Math.floor(diff/(1000*60*60*24));
+let hours = Math.floor((diff/(1000*60*60))%24);
+let minutes = Math.floor((diff/(1000*60))%60);
+
+document.getElementById("countdown").innerHTML =
+"⏳ Nikkah Countdown: " + days + " days " + hours + " hrs " + minutes + " mins 💍";
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+</script>
+
+</body>
+</html>
